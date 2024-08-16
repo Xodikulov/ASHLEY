@@ -208,16 +208,13 @@
                         <form action="{% url 'contact-page' %}" method="post" class="row align-items-center" >
                             {% csrf_token %}
                             <div class="col-lg-6 mil-up">
-                                <input type="text" placeholder="What's your name" name="name" required>
+                                <input type="text" name="first_name" placeholder="What's your name"  required>
                             </div>
                             <div class="col-lg-6 mil-up">
-                                <input type="email" placeholder="Your Email" name="email" required>
+                                <input type="email" name="email" placeholder="Your Email"  required>
                             </div>
                             <div class="col-lg-12 mil-up">
-                                <textarea placeholder="Tell us about our project" name="content" required></textarea>
-                            </div>
-                            <div class="col-lg-8">
-                                <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> We promise not to disclose your personal information to third parties.</p>
+                                <textarea  name="content" placeholder="Tell us about our project"  required></textarea>
                             </div>
                             <div class="col-lg-4">
                                 <div class="mil-adaptive-right mil-up mil-mb-30">

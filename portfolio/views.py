@@ -75,10 +75,10 @@ def home_view(request):
 def contact_view(request):
     if request.method == 'POST':
         try:
-            name = request.POST.get('name')
+            first_name = request.POST.get('first_name')
             email = request.POST.get('email')
             content = request.POST.get('content')
-            new_contact = Contact(name=name,email=email,content=content)
+            new_contact = Contact(name=first_name,email=email,content=content)
             new_contact.save()
             messages.success(request, "Sizning xabaringiz yuborildi!!!") 
             return HttpResponseRedirect(reverse('home-page'))

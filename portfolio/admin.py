@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Contact,Category,Blog,Portfolio,Team
+from .models import Contact, Category, Blog, Portfolio, Team
 from django.utils.html import format_html
 
-admin.site.register((Contact,Category,Portfolio,Team)) 
+admin.site.register((Category,Portfolio,Team)) 
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
@@ -10,3 +10,9 @@ class BlogAdmin(admin.ModelAdmin):
     readonly_fields = ['slug']
     def img(self, obj):
         return format_html('<img width="100" height="100" src="{}" />'.format(obj.image.url))
+    
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'email', 'message')

@@ -46,11 +46,13 @@ class Blog(models.Model, HitCountMixin):
 
     def __str__(self):
         return f"{self.title} by {self.author}"
+    
 
 class Contact(models.Model):
-    name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    content = models.TextField()
+    first_name = models.CharField(max_length=50)
+    email = models.EmailField()
+    message = models.TextField() 
 
     def __str__(self):
-        return f"{self.name} {self.email}"
+        return self.first_name
+
